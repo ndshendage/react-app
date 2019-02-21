@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Task from './task'
 import TaskFilter from './taskFilter'
+import TableConstructor from './tableConstructor'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 const uuidv4 = require('uuid/v4');
 
@@ -133,11 +134,13 @@ class Todo extends React.Component {
           </FormGroup>
         </Form>
         <h1> Will Get the Tasks</h1>
-        {
+        {/* {
           this.filteredTasks().map((task, index)=> {
             return (< Task key={index} task={task} deleteTask={this.deleteTask}/>)
           })
-        }
+        } */}
+        <br/>
+      <TableConstructor tasks={this.filteredTasks()} deleteTask={this.deleteTask}/>
       </div>
     )
   }

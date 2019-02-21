@@ -2,3 +2,7 @@ Form{
   width:500px;
   margin-left: 200px;
 }
+Table{
+  width: 60% !important;
+  margin-left: 200px;
+}

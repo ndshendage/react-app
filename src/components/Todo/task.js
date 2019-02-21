@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button} from 'reactstrap';
 
 const Task = (props) => {
   console.log('from task', props.task)
@@ -6,7 +7,7 @@ const Task = (props) => {
     <div>
       <h3>Name - {props.task.name} Status -
       {props.task.status} {props.name}
-      <button onClick={() => props.deleteTask(props.task.id)}> Remove </button>
+      <Button color="danger" onClick={() => props.deleteTask(props.task.id)}> Remove </Button>
       </h3>
     </div>
   )
