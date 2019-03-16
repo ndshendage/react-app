@@ -4,6 +4,8 @@ import './App.css';
 import Users from './users/Users';
 import Binding from './bindings/Binding';
 import Parent from './components/childParent/Parent';
+import Todo from './components/Todo/todo';
+
 
 class App extends Component {
   state = {
@@ -22,20 +24,29 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        < Users/>
+        {
+          //< Users/>
+        }
         {
           // 2 way binding .. This is the comment
         }
         <br/>
-        <h3> Understand Binding</h3>
-        <Binding/>
+        {
+        //<h3> Understand Binding</h3>
+        }
+        {
+          //<Binding/>
+        }
 
         {
           // understanding the data transfer from parent to child
         }
         <br />
-        <h3>{this.state.title}</h3>
-        <Parent btnName={this.state.btnName} changeBtnNameTitle={this.changeBtnNameTitle.bind(this, 'From Child To Parent')}/>
+        {
+          //<h3>{this.state.title}</h3>
+          //<Parent btnName={this.state.btnName} changeBtnNameTitle={this.changeBtnNameTitle.bind(this, 'From Child To Parent')}/>
+        }
+       <Todo />
       </div>
     );
   }
