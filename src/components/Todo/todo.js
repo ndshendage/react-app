@@ -3,9 +3,11 @@ import Task from './task'
 import TaskFilter from './taskFilter'
 import TableConstructor from './tableConstructor'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-const uuidv4 = require('uuid/v4');
+import { connect } from 'react-redux';
 
-class Todo extends React.Component {
+
+const uuidv4 = require('uuid/v4');
+class Todo extends Component {
   inputElement = React.createRef()
   state = {
     tasks: [
@@ -146,4 +148,17 @@ class Todo extends React.Component {
   }
 }
 
-export default Todo;
+function mapStateToProps(state) {
+    let tasks = state.tasks;
+    console.log(' in mapStateToProps ', state);
+    console.log(' tasks in mapStateToProps', tasks);
+    return { tasks }
+}
+
+// Maps `dispatch` to `props`:
+function mapDispatchToProps(dispatch) {
+    console.log(' in mapDispatchToProps ', dispatch);
+    return { dispatch };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Todo)
